@@ -12,6 +12,7 @@ shared_scripts {
 }
 
 client_scripts {
+    'client/tes.lua',
     'client/main.lua'
 }
 

@@ -15,4 +15,7 @@ Locale = {
     ['bus_pay_fine_success'] = 'behasil membayar denda',
     ['bus_pay_fine_error'] = 'Uang Kamu kurang',
     ['bus_not_bus_job'] = 'Silahkan ambil pekerjaan bus terlebih dahulu',
+    ['bus_info_bus_depot'] = 'Terminal',
+    ['bus_info_bus_plate'] = 'Bus',
+
 }
