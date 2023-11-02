@@ -58,4 +58,6 @@ end
 ```
 
 # TODO
-Add marker for information 
+- Add marker for information ✅
+- Add Quit job command / radial menu ❌
+- 
