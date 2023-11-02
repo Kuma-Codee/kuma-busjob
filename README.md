@@ -13,7 +13,7 @@ I will update soon as possible. Just download it for free.
 - ox_lib
 
 Add to you server cfg:
-- `ensure lachee-busdriver`
+- `ensure kuma-busjob`
 
 Add your route from config
 
