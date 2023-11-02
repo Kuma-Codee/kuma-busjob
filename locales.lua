@@ -1,0 +1,18 @@
+Locale = {
+    ['bus_title'] = 'Informasi Bus',
+    ['bus_wait_passanger'] = 'Menunggu Penumpang',
+    ['bus_goto_nextstop'] = 'Silahkan lanjutkan ke pemberhentian selanjutnya',
+    ['bus_take_passenger'] = '[E] - Untuk Mengambil Penumpang',
+    ['bus_take_route'] = '[E] - Untuk Mengambil Bus Rute %s',
+    ['bus_return'] = '[E] - Kembalikan Bus',
+    ['bus_return_fine'] = '[E] - Bayar Denda untuk mengambil bus kembali',
+    ['bus_error_not_self_bus'] = 'Silahkan gunakan bis mu sendiri',
+    ['bus_error_not_in_bus'] = 'Kamu harus berada di dalam bus',
+    ['bus_textUI_information_back'] = '[ INFORMASI BUS ]  \n  Rute Selanjutnya = %s %s  \n  Perjalanan sudah selesai, Silahkan kembali ke Pool Bus  \n  [F1] - Untuk membatalkan pekerjaan bus',
+    ['bus_textUI_information_next'] = '[ INFORMASI BUS ]  \n  Rute Selanjutnya = %s %s  \n  Sisa Rute = %s  \n  [F1] - Untuk membatalkan pekerjaan bus',
+    ['bus_parking_full'] = 'Tidak bisa mengeluarkan bus, Parkiran penuh',
+    ['bus_get_out_from_vehicle'] = 'silahkan turun dari kendaraan',
+    ['bus_pay_fine_success'] = 'behasil membayar denda',
+    ['bus_pay_fine_error'] = 'Uang Kamu kurang',
+    ['bus_not_bus_job'] = 'Silahkan ambil pekerjaan bus terlebih dahulu',
+}
