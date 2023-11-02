@@ -19,6 +19,8 @@ local BusData = {
     vehicle = nil,
 }
 
+print('test')
+
 -- Functions
 
 local function updateBlip()
