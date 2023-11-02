@@ -4,7 +4,7 @@ local route = 1
 local max = nil
 local busBlip = nil
 local TextUI = false
-print("tes")
+
 
 local RouteData = {
     Blip = nil,
@@ -32,7 +32,7 @@ local function updateBlip()
         SetBlipAsShortRange(busBlip, true)
         SetBlipColour(busBlip, 49)
         BeginTextCommandSetBlipName("STRING")
-        AddTextComponentSubstringPlayerName(Lang:t('info.bus_depot'))
+        AddTextComponentSubstringPlayerName(Locale['bus_info_bus_depot'])
         EndTextCommandSetBlipName(busBlip)
     elseif busBlip ~= nil then
         RemoveBlip(busBlip)
@@ -55,7 +55,7 @@ function SpawnBus(rute)
     QBCore.Functions.TriggerCallback('QBCore:Server:SpawnVehicle', function(netId)
         local veh = NetToVeh(netId)
         BusData.vehicle = veh
-        SetVehicleNumberPlateText(veh, Lang:t('info.bus_plate') .. tostring(math.random(1000, 9999)))
+        SetVehicleNumberPlateText(veh, Locale['bus_info_bus_plate'] .. tostring(math.random(1000, 9999)))
         exports[Config.Fuel]:SetFuel(veh, 100.0)
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
         TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
@@ -95,6 +95,7 @@ RegisterNetEvent('kuma-busjob:client:DoBusNpc', function()
     RouteData.coord = Config.Route[RouteData.route].Location[route]
     TextUI = true
     RouteData.Blip = AddBlipForCoord(RouteData.coord.x, RouteData.coord.y, RouteData.coord.z)
+    
     SetBlipColour(RouteData.Blip, 3)
     SetBlipRoute(RouteData.Blip, true)
     SetBlipRouteColour(RouteData.Blip, 3)
@@ -155,6 +156,7 @@ RegisterNetEvent('kuma-busjob:client:DoBusNpc', function()
     })
 end)
 
+
 CreateThread(function()
     while true do
         if TextUI then
@@ -167,6 +169,7 @@ CreateThread(function()
                 and Config.Route[RouteData.route].Location[route] or Config.Route[RouteData.route].Backlocation
             local streetName, crossingRoad = GetStreetNameAtCoord(RouteData.coord.x, RouteData.coord.y, RouteData.coord
                 .z)
+            
             local message = ''
             if route == 100 then
                 message = string.format(Locale['bus_textUI_information_back'], GetStreetNameFromHashKey(streetName),
@@ -185,7 +188,14 @@ CreateThread(function()
                         color = 'white'
                     }
                 })
-            Wait(1000)
+                local dist = #(vector3(RouteData.coord.x, RouteData.coord.y, RouteData.coord.z) - GetEntityCoords(cache.ped))
+
+                if dist < 100 then
+                    DrawMarker(21, RouteData.coord.x, RouteData.coord.y, RouteData.coord.z + 4, 0.0, 0.0, 0.0, 0.0, 180.0, 0.0, 10.0, 10.0, 8.0, 255, 128, 0, 50, false, true, 2, nil, nil, false)
+                    Wait(0)
+                else
+                    Wait(1000)
+             end
         else
             Wait(5000)
         end

@@ -1,7 +1,7 @@
 Config          = Config or {}
 
 Config.Notify   = 'QBCore' -- 'QBCore', 'bcs hud', ditambahkan lagi besok :)
-Config.Fuel     = 'ir_fuel'
+Config.Fuel     = 'LegacyFuel'
 Config.Location = vector4(462.22, -641.15, 28.45, 175.0)
 
 Config.Route    = {
