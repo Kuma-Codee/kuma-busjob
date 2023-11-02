@@ -4,6 +4,7 @@ local route = 1
 local max = nil
 local busBlip = nil
 local TextUI = false
+print("tes")
 
 local RouteData = {
     Blip = nil,
